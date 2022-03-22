@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sample-app
-  namespace: test
+  namespace: nonprod
 spec:
   selector:
     matchLabels:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: itm-registry.opthemateknoloji.com:5000/sample-app:$(Build.BuildId)v
+        image: registry.feo.local:5000/sample-app:BuildIdv
         env:
           - name: PORT
             value: "80"
